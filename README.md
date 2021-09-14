@@ -35,6 +35,31 @@ various tidbits regarding my attempts to study sleep habits
 ### Getting TinySleepNet to work:
 
 
+### Installing cuda:
+
+#### follow these instructions to install the cuda toolkit
+https://developer.nvidia.com/cuda-downloads?target_os=Linux&target_arch=x86_64&Distribution=Ubuntu&target_version=20.04&target_type=deb_local
+
+#### and these instrauctions to get cudnn.10.0
+https://docs.nvidia.com/deeplearning/cudnn/install-guide/index.html
+
+cd /usr/local
+sudo tar -xvf cudnn-10.0-linux-x64-v7.6.5.32.tgz
+sudo ldconfig /usr/local/cuda/lib64
+
+2021-09-13 23:57:29.694668: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:192] libcuda reported version is: 470.57.2
+2021-09-13 23:57:29.694689: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:196] kernel reported version is: 460.56.0
+2021-09-13 23:57:29.694695: E tensorflow/stream_executor/cuda/cuda_diagnostics.cc:306] kernel version 460.56.0 does not match DSO version 470.57.2 -- cannot find working devices in this configuration
+
+
+
+#### check what devices are availabe to tensorflow (i.e., will the gpu work?)
+from tensorflow.python.client import device_lib
+print(device_lib.list_local_devices())
+
+
+
+
 ### Hacking the Muse S to record Cz and Pz:
 
 
